@@ -191,9 +191,26 @@ async function initData() {
       )
    `);
 
-  for (const meal of dummyMeals) {
-    stmt.run(meal);
-  }
+   // If user passes --reset, clear existing rows so inserts won't conflict
+   if (process.argv.includes('--reset')) {
+      db.prepare('DELETE FROM meals').run();
+      console.log('Cleared existing meals table (--reset)');
+   }
+
+   for (const meal of dummyMeals) {
+      try {
+         stmt.run(meal);
+      } catch (err) {
+         // Skip duplicate slugs to make the script idempotent
+         if (err && err.code === 'SQLITE_CONSTRAINT_UNIQUE') {
+            console.log(`Skipping duplicate meal slug: ${meal.slug}`);
+            continue;
+         }
+         throw err;
+      }
+   }
+
+   console.log('Data initialization complete.');
 }
 
 initData();

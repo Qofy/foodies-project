@@ -11,8 +11,9 @@ export default function ImagePicker({label, name}) {
   }
 
   function pickedHandler(event) {
-    const files = event.target.files;
+    const files = event.target.files[0];
     if(!files){
+      setSelectedImage(null);
       return;
     }
     const fileReader = new FileReader();
@@ -23,13 +24,20 @@ export default function ImagePicker({label, name}) {
   }
   return (
     <div className={classes.picker}>
-      <label htmlFor="image">{label}</label>
+      <label htmlFor={name}>{label}</label>
       <div className={classes.controls}>
         <div className={classes.preview}>
           {!selectedImage && <p>No image picked yet.</p>}
           {selectedImage && <Image src={selectedImage} alt="Picked Image" fill/>}
         </div>
-      <input type="file" id="image" name={name} accept="image/png, image/jpeg" className={classes.input} onChange={pickImageHandler}/>
+      <input 
+      type="file" 
+      id={name} 
+      name={name} 
+      accept="image/png, image/jpeg" 
+      className={classes.input} 
+      ref={fileInputRef}
+      onChange={pickedHandler}/>
       </div>
       <button className={classes.button} type='button' onClick={pickImageHandler}>Upload Image</button>
     </div>
