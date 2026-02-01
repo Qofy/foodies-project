@@ -5,6 +5,9 @@ import { notFound } from "next/navigation"
 
 export async function generateMetadata({params}) {
   const meal = getMeal(params.mealsSlug);
+  if(!meal){
+   notFound();//this will find the closiest notFound page
+  }
   return{
     title:meal.title,
     summary: meal.summary
@@ -12,9 +15,6 @@ export async function generateMetadata({params}) {
 }
 export default function MoreDeatil({params}){
   const meal = getMeal(params.mealsSlug)// this mealsSlug is the file name [mealsSlug]
-  if(!meal){
-   notFound();//this will find the closiest notFound page
-  }
   meal.instructions = meal.instructions.replace(/\n/g, '<br>')// this for getting all line breaks
 
   return(

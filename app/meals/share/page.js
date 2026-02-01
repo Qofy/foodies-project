@@ -4,6 +4,11 @@ import ImagePicker from '@/component/meals/image-picker';
 import MealForm from '@/component/meals/meals-form';
 // server action is used directly as the form `action`
 
+export const metadata = {
+  title: 'Share Your Meal',
+  description: 'Share your delicious meal and recipe to the Community',
+};
+
 export default function ShareMealPage() {
   
   const formAction = handleSubmission;
