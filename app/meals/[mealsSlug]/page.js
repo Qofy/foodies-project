@@ -3,6 +3,13 @@ import classes from "./page.module.css"
 import { getMeal } from "@/lib/meals"
 import { notFound } from "next/navigation"
 
+export async function generateMetadata({params}) {
+  const meal = getMeal(params.mealsSlug);
+  return{
+    title:meal.title,
+    summary: meal.summary
+  }
+}
 export default function MoreDeatil({params}){
   const meal = getMeal(params.mealsSlug)// this mealsSlug is the file name [mealsSlug]
   if(!meal){
