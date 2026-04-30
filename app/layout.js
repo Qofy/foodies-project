@@ -1,5 +1,7 @@
 import './globals.css';
 import Header from '@/component/Header';
+import { CartProvider } from '@/lib/cartContext';
+import CartModal from '@/component/marketplace/CartModal';
 
 export const metadata = {
   title: 'NextLevel Food',
@@ -10,8 +12,11 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body>
-        <Header/>
-        {children}
+        <CartProvider>
+          <Header/>
+          {children}
+          <CartModal />
+        </CartProvider>
       </body>
     </html>
   );
