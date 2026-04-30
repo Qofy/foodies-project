@@ -138,6 +138,38 @@
   animation: fadeIn 0.5s ease;
 }
 
+.noResults {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.noResults p {
+  font-size: 1.25rem;
+  color: #666;
+  margin: 0 0 1.5rem;
+}
+
+.resetBtn {
+  padding: 0.75rem 2rem;
+  background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.resetBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.35);
+}
+
 @keyframes fadeIn {
   from {
     opacity: 0;
