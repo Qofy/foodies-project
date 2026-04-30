@@ -1,5 +1,8 @@
 .header {
   display: flex;
+  flex-direction: column;
+  justify-items: center;
+  align-items: center;
   gap: 3rem;
   margin: 3rem auto;
   width: 90%;
@@ -7,8 +10,8 @@
 }
 
 .slideshow {
-  width: 40rem;
-  height: 25rem;
+  width: 60rem;
+  height: 40rem;
 }
 
 .hero {

@@ -22,6 +22,9 @@ return(
     <li>
       <Navlink href="/community">Foodies Community</Navlink>
     </li>
+    <li>
+      <Navlink href="/buyFood">Order Food</Navlink>
+    </li>
   </ul>
 </header>
 </>
