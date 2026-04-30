@@ -1,6 +1,6 @@
 .card {
   position: relative;
-  background: #ffffff;
+  background: #291f15;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
@@ -34,7 +34,7 @@
   width: 100%;
   height: 220px;
   overflow: hidden;
-  background: #f5f5f5;
+  background: #262010;
 }
 
 .image {
@@ -63,7 +63,7 @@
   font-size: 1.25rem;
   font-weight: 700;
   margin: 0;
-  color: #1a1a1a;
+  color: #fff;
   line-height: 1.3;
   transition: color 0.2s ease;
 }
@@ -85,16 +85,18 @@
   gap: 0.3rem;
   font-size: 0.95rem;
   font-weight: 600;
-  color: #333;
+  color: #fff;
 }
 
 .starIcon {
   color: #fbbf24;
   flex-shrink: 0;
+  width: 14px !important;
+  height: 14px !important;
 }
 
 .reviews {
-  color: #888;
+  color: #d9d5d5;
   font-weight: 400;
   font-size: 0.9rem;
 }
@@ -110,18 +112,18 @@
 
 .seller {
   font-size: 0.9rem;
-  color: #666;
+  color: #fdfdfd;
   margin: 0;
 }
 
 .seller span {
   font-weight: 600;
-  color: #444;
+  color: #d7550a;
 }
 
 .summary {
   font-size: 0.95rem;
-  color: #555;
+  color: #fcfafa;
   line-height: 1.5;
   margin: 0;
   display: -webkit-box;
@@ -178,6 +180,10 @@
   gap: 0.4rem;
 }
 
+.btn svg {
+  flex-shrink: 0;
+}
+
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
@@ -188,6 +194,11 @@
   color: white;
   flex: 1;
   box-shadow: 0 4px 12px rgba(255, 107, 53, 0.25);
+}
+
+.btnPrimary svg {
+  width: 16px !important;
+  height: 16px !important;
 }
 
 .btnPrimary:hover:not(:disabled) {
@@ -204,7 +215,11 @@
   color: #333;
   padding: 0.75rem;
   min-width: 48px;
-  font-size: 1.25rem;
+}
+
+.btnIcon svg {
+  width: 18px !important;
+  height: 18px !important;
 }
 
 .btnIcon:hover {

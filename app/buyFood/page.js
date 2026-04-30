@@ -2,6 +2,7 @@ import { Suspense } from 'react';
 import { getFoodListings } from '@/lib/marketplace';
 import FoodCard from '@/component/marketplace/FoodCard';
 import classes from './page.module.css';
+import { Search, SlidersHorizontal, DollarSign, Utensils, ChefHat, Star } from 'lucide-react';
 
 export const metadata = {
   title: 'Buy Food | Foodies Marketplace',
@@ -49,15 +50,18 @@ export default function BuyFoodPage() {
         </div>
         <div className={classes.headerStats}>
           <div className={classes.stat}>
+            <div className={classes.statIcon}><Utensils size={24} /></div>
             <span className={classes.statNumber}>100+</span>
             <span className={classes.statLabel}>Dishes</span>
           </div>
           <div className={classes.stat}>
+            <div className={classes.statIcon}><ChefHat size={24} /></div>
             <span className={classes.statNumber}>50+</span>
             <span className={classes.statLabel}>Chefs</span>
           </div>
           <div className={classes.stat}>
-            <span className={classes.statNumber}>4.8⭐</span>
+            <div className={classes.statIcon}><Star size={24} fill="#ff6b35" /></div>
+            <span className={classes.statNumber}>4.8</span>
             <span className={classes.statLabel}>Average Rating</span>
           </div>
         </div>
@@ -66,7 +70,7 @@ export default function BuyFoodPage() {
       <main className={classes.main}>
         <div className={classes.filters}>
           <div className={classes.filterGroup}>
-            <label className={classes.filterLabel}>🔍 Search</label>
+            <label className={classes.filterLabel}><Search size={14}/> Search</label>
             <input 
               type="search" 
               placeholder="Search for dishes..." 
@@ -75,7 +79,7 @@ export default function BuyFoodPage() {
           </div>
           
           <div className={classes.filterGroup}>
-            <label className={classes.filterLabel}>📊 Sort By</label>
+            <label className={classes.filterLabel}><SlidersHorizontal size={14} /> Sort By</label>
             <select className={classes.select}>
               <option>Popular</option>
               <option>Price: Low to High</option>
@@ -86,7 +90,7 @@ export default function BuyFoodPage() {
           </div>
 
           <div className={classes.filterGroup}>
-            <label className={classes.filterLabel}>💰 Price Range</label>
+            <label className={classes.filterLabel}><DollarSign size={14} /> Price Range</label>
             <select className={classes.select}>
               <option>All Prices</option>
               <option>Under $15</option>
