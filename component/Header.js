@@ -1,5 +1,5 @@
 import Link from "next/link"
-import Logo from "@/assets/logo.png"
+import Logo from "@/assets/k2logo.png"
 import classes from "@/component/header/header.module.css"
 import Image from "next/image"
 import HeaderBackground from "./HeaderBackground"
@@ -12,7 +12,7 @@ return(
 <header className={classes.header}>
   <Link href="/" className={classes.logo}>
   <Image  src = {Logo} alt="logo" priority width={70}/>
-  NextLevel Food
+    FirePup
   </Link>
 
   <ul className={classes.nav}>

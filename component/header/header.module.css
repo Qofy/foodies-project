@@ -19,6 +19,10 @@
   gap: 1rem;
 }
 
+.logo img{
+  border-radius: 50%;
+}
+
 .nav{
   display: flex;
   gap: 2rem;
