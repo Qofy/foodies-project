@@ -4,7 +4,7 @@ import { getMeal } from "@/lib/meals"
 import { notFound } from "next/navigation"
 
 export async function generateMetadata({params}) {
-  const meal = getMeal(params.mealsSlug);
+  const meal = await getMeal(params.mealsSlug);
   if(!meal){
    notFound();//this will find the closiest notFound page
   }
@@ -13,8 +13,8 @@ export async function generateMetadata({params}) {
     summary: meal.summary
   }
 }
-export default function MoreDeatil({params}){
-  const meal = getMeal(params.mealsSlug)// this mealsSlug is the file name [mealsSlug]
+export default async function MoreDeatil({params}){
+  const meal = await getMeal(params.mealsSlug)// this mealsSlug is the file name [mealsSlug]
   if(!meal){
     notFound();
   }
