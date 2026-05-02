@@ -15,6 +15,9 @@ export async function generateMetadata({params}) {
 }
 export default function MoreDeatil({params}){
   const meal = getMeal(params.mealsSlug)// this mealsSlug is the file name [mealsSlug]
+  if(!meal){
+    notFound();
+  }
   meal.instructions = meal.instructions.replace(/\n/g, '<br>')// this for getting all line breaks
 
   return(
